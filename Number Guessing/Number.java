@@ -10,13 +10,16 @@ public class Number {
 
 		int answer = scanner.nextInt();
 
-		// while (answer != 1 || answer != 2 || answer != 3) {
-		// 	System.out.println(answer);
-		// 	System.out.println("Invalid input. Press a correct value");
-		// 	System.out.println("What difficulty would you like to play? Press the corresponding number.");
-		// 	System.out.print("1. Easy\n2. Medium\n3. Hard\n");
-		// 	answer = scanner.nextInt();
-		// }
+		while (true) {
+			if (answer == 1 || answer == 2 || answer == 3) {
+				break;
+			} else {
+				System.out.println("Invalid input. Press a correct value");
+				System.out.println("What difficulty would you like to play? Press the corresponding number.");
+				System.out.print("1. Easy\n2. Medium\n3. Hard\n");
+				answer = scanner.nextInt();
+			}
+		}
 
 		scanner.close();
 
@@ -32,7 +35,6 @@ public class Number {
 		}
 	}
 
-
 	public static void main(String[] args) {
 		String difficulty = getDifficulty();
 		System.out.println(difficulty);
@@ -42,7 +44,7 @@ public class Number {
 		int randomNum = random.nextInt(20);
 		System.out.println(randomNum);
 
-		// Scanner scanner = new Scanner(System.in);		
+		// Scanner scanner = new Scanner(System.in);
 		// System.out.println("What is your name?");
 		// String name = scanner.nextLine();
 		// System.out.printf("My name is: %s\n", name);
