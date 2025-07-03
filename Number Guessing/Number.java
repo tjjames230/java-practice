@@ -37,6 +37,6 @@ public class Number {
 	public static void main(String[] args) {
 		String difficulty = getDifficulty();
 		Gameflow gameflow = new Gameflow(difficulty);
-		System.out.println(gameflow.gameOver);
+		gameflow.playGame();
 	}
 }

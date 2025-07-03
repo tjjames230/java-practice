@@ -1,9 +1,11 @@
 import java.util.Random;
+import java.util.Scanner;
 
 public class Gameflow {
 	String difficulty;
 	boolean gameOver;
 	int randomNum;
+	Scanner scanner = new Scanner(System.in);
 
 	public Gameflow(String difficulty) {
 		this.difficulty = difficulty;
@@ -27,26 +29,42 @@ public class Gameflow {
 		Random random = new Random();
 
 		if (this.difficulty == "easy") {
-			return random.nextInt(5);
+			return random.nextInt(6);
 		} else if (this.difficulty == "medium") {
-			return random.nextInt(10);
+			return random.nextInt(11);
 		} else {
-			return random.nextInt(15);
+			return random.nextInt(16);
 		}
 	}
 
 	public int numberGuess() {
 		System.out.println("Guess what the random number is.");
 
+		if (this.difficulty == "easy") {
+			System.out.println("(between 1-5)");
+		} else if (this.difficulty == "medium") {
+			System.out.println("(between 1-10)");
+		} else {
+			System.out.println("(between 1-15)");
+		}
+
+		int number = scanner.nextInt();
+		System.out.println(number);
+		return number;
 	}
 
-	// public void playGame() {
-	// while (!gameOver) {
+	public void playGame() {
+		while (!gameOver) {
+			int number = numberGuess();
 
-	// if () {
+			if (number == this.getRandomNum()) {
+				this.setGameOver(true);
+				System.out.println("Congrats, you guessed the correct number!");
+			} else {
+				System.out.println("Incorrect, try again");
+			}
+		}
 
-	// }
-
-	// }
-	// }
+		scanner.close();
+	}
 }
