@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.Random;
 
 public class Number {
 	static Scanner scanner = new Scanner(System.in);
@@ -37,17 +36,7 @@ public class Number {
 
 	public static void main(String[] args) {
 		String difficulty = getDifficulty();
-		System.out.println(difficulty);
-
-		Random random = new Random();
-
-		int randomNum = random.nextInt(20);
-		System.out.println(randomNum);
-
-		// Scanner scanner = new Scanner(System.in);
-		// System.out.println("What is your name?");
-		// String name = scanner.nextLine();
-		// System.out.printf("My name is: %s\n", name);
-		// scanner.close();
+		Gameflow gameflow = new Gameflow(difficulty);
+		System.out.println(gameflow.gameOver);
 	}
 }
