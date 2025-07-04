@@ -48,8 +48,8 @@ public class Gameflow {
 			System.out.println("(between 1-15)");
 		}
 
+		System.out.println("test");
 		int number = scanner.nextInt();
-		System.out.println(number);
 		return number;
 	}
 
@@ -64,7 +64,5 @@ public class Gameflow {
 				System.out.println("Incorrect, try again");
 			}
 		}
-
-		scanner.close();
 	}
 }

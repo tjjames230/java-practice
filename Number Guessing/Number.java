@@ -20,8 +20,6 @@ public class Number {
 			}
 		}
 
-		scanner.close();
-
 		switch (answer) {
 			case 1:
 				return "easy";
@@ -38,5 +36,6 @@ public class Number {
 		String difficulty = getDifficulty();
 		Gameflow gameflow = new Gameflow(difficulty);
 		gameflow.playGame();
+		scanner.close();
 	}
 }
